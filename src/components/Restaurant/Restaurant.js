@@ -6,3 +6,4 @@ function Restaurant(){
         <div>This is the Restaurant component</div>
     )
 }
+export default Restaurant
