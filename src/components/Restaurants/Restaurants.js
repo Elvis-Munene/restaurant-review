@@ -1,6 +1,7 @@
 import React from 'react'
 import {useEffect,useState} from 'react'
 import Restaurant from '../Restaurant/Restaurant'
+import styled from "styled-components"
 
 function Restaurants(){
 
@@ -11,29 +12,6 @@ function Restaurants(){
         .then((response)=> response.json())
         .then((response)=> setRestaurants(response))  
     },[])
-    // console.log(restaurants)
-
-
-    // const restaurantnames = restaurants.map((restaurant)=> restaurant.name)
-// const restaurantnames = restaurants.map((item) => {
-//         return(<li key={item.name}>{item.name}</li>)
-        // return(
-        // <Restaura 
-        // key={item.attributes.name}
-        // attributes={item.attributes}
-        // />
-        // })
-
-// console.log(restaurantnames)
-// const grid = restaurants.map(item => {
-//             // return(<li key={item.name}>{item.name}</li>)
-//             return(
-//             <Restaurant 
-//             key={item.name}
-//             attributes={item.name}
-//             />
-//             )
-//             })
     return (
         <div className="Home">
         <div className="header">
@@ -41,9 +19,7 @@ function Restaurants(){
         <div className="subheader">Honest, unbiased reviews</div>
         </div>
         <div className="grid">
-        {/* <ul>{restaurantnames}</ul> */}
         <ul>{restaurants.map(item => {
-            // return(<li key={item.name}>{item.name}</li>)
             return(<li>
             <Restaurant 
             key={item.id}
@@ -51,7 +27,6 @@ function Restaurants(){
             /></li>
             )
             })}</ul>
-        {/* <Restaurant/> */}
         </div>
         </div>
         

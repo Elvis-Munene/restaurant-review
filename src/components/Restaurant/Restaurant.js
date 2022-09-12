@@ -1,7 +1,8 @@
 import React from 'react'
 
 function Restaurant({attributes}){
-    console.log(attributes)
+    // console.log(attributes)
+    console.log(attributes.reviews)
     return (
         
         <div className='card'>
