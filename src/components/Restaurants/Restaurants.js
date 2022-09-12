@@ -14,6 +14,10 @@ const Header = styled.div`
     }
 
 `
+const Subheader = styled.div`
+        font-weight: 300;
+        font-size:26px;
+`
 
      
 
@@ -30,7 +34,7 @@ function Restaurants(){
         <Home>
         <Header className="header">
         <h1>OpenRestaurants</h1>
-        <div className="subheader">Honest, unbiased reviews</div>
+        <Subheader className="subheader">Honest, unbiased reviews</Subheader>
         </Header>
         <div className="grid">
         <ul>{restaurants.map(item => {
