@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import styled from "styled-components"
 
 const Card = styled.div`
@@ -30,6 +31,7 @@ function Restaurant({attributes}){
             <RestaurantImage className='restaurant-image'><img src={attributes.image_url} alt=""></img></RestaurantImage>
             <RestaurantName classNam e='restaurant-name'>{attributes.name}</RestaurantName>
             <div className='restaurant-score'>{attributes.score}</div>
+            <Link to="/restaurant/:id">View restaurant</Link>
         </Card>
     )
 }
