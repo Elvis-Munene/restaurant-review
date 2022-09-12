@@ -18,7 +18,13 @@ const Subheader = styled.div`
         font-weight: 300;
         font-size:26px;
 `
-
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  width:100px;
+  padding:20px;
+`
      
 
 function Restaurants(){
@@ -36,7 +42,7 @@ function Restaurants(){
         <h1>OpenRestaurants</h1>
         <Subheader className="subheader">Honest, unbiased reviews</Subheader>
         </Header>
-        <div className="grid">
+        <Grid className="grid">
         <ul>{restaurants.map(item => {
             return(<li>
             <Restaurant 
@@ -45,7 +51,7 @@ function Restaurants(){
             /></li>
             )
             })}</ul>
-        </div>
+        </Grid>
         </Home>
         
     )
