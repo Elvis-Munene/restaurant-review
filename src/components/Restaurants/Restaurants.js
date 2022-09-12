@@ -3,6 +3,12 @@ import {useEffect,useState} from 'react'
 import Restaurant from '../Restaurant/Restaurant'
 import styled from "styled-components"
 
+const Home = styled.div`
+        text-align: center;
+        max-width: 1200px;
+`
+     
+
 function Restaurants(){
 
     const [restaurants, setRestaurants] = useState([])
@@ -13,7 +19,7 @@ function Restaurants(){
         .then((response)=> setRestaurants(response))  
     },[])
     return (
-        <div className="Home">
+        <Home>
         <div className="header">
         <h1>OpenRestaurants</h1>
         <div className="subheader">Honest, unbiased reviews</div>
@@ -28,7 +34,7 @@ function Restaurants(){
             )
             })}</ul>
         </div>
-        </div>
+        </Home>
         
     )
 }
