@@ -1,9 +1,6 @@
 import React from 'react'
 import {useEffect,useState} from 'react'
-
-
-
-
+import Restaurant from '../Restaurant/Restaurant'
 
 function Restaurants(){
 
@@ -14,15 +11,48 @@ function Restaurants(){
         .then((response)=> response.json())
         .then((response)=> setRestaurants(response))  
     },[])
-    console.log(restaurants)
+    // console.log(restaurants)
 
-const restaurantnames = restaurants.map(item => {
-        return(<li key={item.name}>{item.name}</li>)
-        })
+
+    // const restaurantnames = restaurants.map((restaurant)=> restaurant.name)
+// const restaurantnames = restaurants.map((item) => {
+//         return(<li key={item.name}>{item.name}</li>)
+        // return(
+        // <Restaura 
+        // key={item.attributes.name}
+        // attributes={item.attributes}
+        // />
+        // })
+
+// console.log(restaurantnames)
+// const grid = restaurants.map(item => {
+//             // return(<li key={item.name}>{item.name}</li>)
+//             return(
+//             <Restaurant 
+//             key={item.name}
+//             attributes={item.name}
+//             />
+//             )
+//             })
     return (
-        <div>
-        <div>This is the restaurants component</div>
-        <ul>{restaurantnames}</ul>
+        <div className="Home">
+        <div className="header">
+        <h1>OpenRestaurants</h1>
+        <div className="subheader">Honest, unbiased reviews</div>
+        </div>
+        <div className="grid">
+        {/* <ul>{restaurantnames}</ul> */}
+        <ul>{restaurants.map(item => {
+            // return(<li key={item.name}>{item.name}</li>)
+            return(<li>
+            <Restaurant 
+            key={item.id}
+            attributes={item}
+            /></li>
+            )
+            })}</ul>
+        {/* <Restaurant/> */}
+        </div>
         </div>
         
     )

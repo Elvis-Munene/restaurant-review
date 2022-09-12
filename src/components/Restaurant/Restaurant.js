@@ -1,19 +1,14 @@
 import React from 'react'
-// import {useEffect,useState} from 'react'
 
-// const [restaurant, setRestaurant] = useState([])
-
-//     useEffect(()=>{
-//         fetch("http://localhost:9292/reviews")
-//         .then((response)=> response.json())
-//         .then((restaurant)=> setRestaurants(restaurants))
-//     },[])
-
-
-
-function Restaurant(){
+function Restaurant({attributes}){
+    console.log(attributes)
     return (
-        <div>This is the Restaurant component</div>
+        
+        <div className='card'>
+            <div className='restaurant-image'><img src={attributes.image_url} alt=""></img></div>
+            <div className='restaurant-name'>{attributes.name}</div>
+            <div className='restaurant-score'>{attributes.score}</div>
+        </div>
     )
 }
 export default Restaurant
