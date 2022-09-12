@@ -22,6 +22,24 @@ const RestaurantImage = styled.div`
 const RestaurantName = styled.div`
 padding: 20px 0 10px 0;
 `
+
+const LinkWrapper = styled.div`
+    margin: 30px 0 20px 0;
+    height: 50px;
+
+    a{
+        color: white;
+        background:#000;
+        border-radius: 4px;
+        padding: 10px 50px;
+        border: 1px solid #000;
+        width: 100%;
+        text-decoration: none;
+    }
+
+`
+
+
 function Restaurant({attributes}){
 
  
@@ -31,7 +49,9 @@ function Restaurant({attributes}){
             <RestaurantImage className='restaurant-image'><img src={attributes.image_url} alt=""></img></RestaurantImage>
             <RestaurantName classNam e='restaurant-name'>{attributes.name}</RestaurantName>
             <div className='restaurant-score'>{attributes.score}</div>
+            <LinkWrapper>
             <Link to="/restaurant/:id">View restaurant</Link>
+            </LinkWrapper>
         </Card>
     )
 }
