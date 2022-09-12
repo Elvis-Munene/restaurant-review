@@ -7,6 +7,14 @@ const Home = styled.div`
         text-align: center;
         max-width: 1200px;
 `
+const Header = styled.div`
+        padding:100px 100px 10px 100px;
+    h1{
+        font-size:42px;
+    }
+
+`
+
      
 
 function Restaurants(){
@@ -20,10 +28,10 @@ function Restaurants(){
     },[])
     return (
         <Home>
-        <div className="header">
+        <Header className="header">
         <h1>OpenRestaurants</h1>
         <div className="subheader">Honest, unbiased reviews</div>
-        </div>
+        </Header>
         <div className="grid">
         <ul>{restaurants.map(item => {
             return(<li>
