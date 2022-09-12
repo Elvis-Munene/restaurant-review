@@ -43,14 +43,14 @@ function Restaurants(){
         <Subheader className="subheader">Honest, unbiased reviews</Subheader>
         </Header>
         <Grid className="grid">
-        <ul>{restaurants.map(item => {
-            return(<li>
+        {restaurants.map(item => {
+            return(
             <Restaurant 
             key={item.id}
             attributes={item}
-            /></li>
+            />
             )
-            })}</ul>
+            })}
         </Grid>
         </Home>
         
