@@ -1,6 +1,6 @@
 import React from 'react'
 import {useEffect,useState} from 'react'
-import Restaurant from '../Restaurant/Restaurant'
+import Restaurant from '../Restaurants/Restaurant'
 import styled from "styled-components"
 
 const Home = styled.div`
