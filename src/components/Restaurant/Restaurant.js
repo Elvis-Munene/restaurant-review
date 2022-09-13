@@ -34,6 +34,7 @@ const Reviewform = styled.div`
 
 function Restaurant ({attributes}) {
 const [restaurant, setRestaurant] =  useState({})
+const [review, setReview] = useState({})
 
 useEffect(()=>{
     // const slug = attributes.match.params.slug
@@ -41,6 +42,18 @@ useEffect(()=>{
     .then((response)=> response.json())
     .then((response)=> setRestaurant(response))  
 },[])
+
+function handleChange(e){
+e.preventDefault()
+
+setReview(Object.assign({},review, {[e.target.name]: e.target.value}))
+console.log("review:", review)
+
+}
+function handleSubmit(e){
+    e.preventDefault()
+}
+
 
     return (
         <Wrapper className='wrapper'>
@@ -50,8 +63,11 @@ useEffect(()=>{
                     Restaurant Reviews
                 </div>
             </Column>
-            <Column className='column'>
-                <Reviewform className='review-form'><ReviewForm/></Reviewform>
+            <Column>
+                <ReviewForm
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+                />
             </Column>
             
         </Wrapper>
