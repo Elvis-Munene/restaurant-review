@@ -20,9 +20,17 @@ const Column = styled.div`
 const Reviewform = styled.div`
         text-align: center;
         width: 1200px;
-        height: 100px;
+        height: 600px;
         background-color: black;
 `
+
+
+
+
+
+
+
+
 
 function Restaurant ({attributes}) {
 const [restaurant, setRestaurant] =  useState({})
@@ -35,18 +43,18 @@ useEffect(()=>{
 },[])
 
     return (
-        <div className='wrapper'>
-            <div className='column'>
+        <Wrapper className='wrapper'>
+            <Column className='column'>
                 <Header/>
                 <div className='reviews'>
                     Restaurant Reviews
                 </div>
-            </div>
-            <div className='column'>
+            </Column>
+            <Column className='column'>
                 <Reviewform className='review-form'>Review goes here</Reviewform>
-            </div>
+            </Column>
             
-        </div>
+        </Wrapper>
     )
 }
 
