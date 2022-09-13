@@ -42,13 +42,13 @@ const LinkWrapper = styled.div`
 
 function Restaurant({attributes}){
 
- 
+ console.log(attributes.reviews.score)
     return (
         
         <Card className='card'>
             <RestaurantImage className='restaurant-image'><img src={attributes.image_url} alt=""></img></RestaurantImage>
             <RestaurantName classNam e='restaurant-name'>{attributes.name}</RestaurantName>
-            <div className='restaurant-score'>{attributes.score}</div>
+            <div className='restaurant-score'>{attributes.reviews.map((item)=> item.score)}</div>
             <LinkWrapper>
             <Link to="/restaurant/:id">View restaurant</Link>
             </LinkWrapper>
