@@ -12,7 +12,15 @@ useEffect(()=>{
 },[])
 
     return (
-        <div> This is the restaurant#show view for the app</div>
+        <div className='wrapper'>
+            <div className='column'>
+                <div className='header'>Head goes Here</div>
+                <div className='reviews'>Restaurant Reviews</div>
+            </div>
+            <div className='column'>
+                <div className='review-form'>Review goes here</div>
+            </div>
+        </div>
     )
 }
 
