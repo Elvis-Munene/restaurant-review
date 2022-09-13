@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Header from "../Restaurant/Header"
 import styled from "styled-components"
+import ReviewForm from "../Restaurant/ReviewForm"
 
 const Wrapper = styled.div`
    margin-left: auto;
@@ -13,15 +14,14 @@ const Column = styled.div`
         background: white;
         height: 100vh;
         overflow: scroll;
-
 `
 
 
 const Reviewform = styled.div`
         text-align: center;
-        width: 1200px;
+        width: 600px;
         height: 600px;
-        background-color: black;
+        background-color: blue;
 `
 
 
@@ -51,7 +51,7 @@ useEffect(()=>{
                 </div>
             </Column>
             <Column className='column'>
-                <Reviewform className='review-form'>Review goes here</Reviewform>
+                <Reviewform className='review-form'><ReviewForm/></Reviewform>
             </Column>
             
         </Wrapper>
