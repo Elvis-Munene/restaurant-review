@@ -3,6 +3,7 @@ import React from 'react'
 
 
 function Header(props) {
+    return (
     // <div className="wrapper">
     //     <h1> <img src=''/>Restaurant Name</h1>
     <div>
@@ -13,6 +14,7 @@ function Header(props) {
 
     </div>
     // </div>
+    )
 }
 
 
