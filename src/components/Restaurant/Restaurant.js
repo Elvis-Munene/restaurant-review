@@ -1,5 +1,28 @@
 import React, { useEffect, useState } from 'react'
+import Header from "../Restaurant/Header"
+import styled from "styled-components"
 
+const Wrapper = styled.div`
+   margin-left: auto;
+   margin-right: auto;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+`
+
+const Column = styled.div`
+        background: white;
+        height: 100vh;
+        overflow: scroll;
+
+`
+
+
+const Reviewform = styled.div`
+        text-align: center;
+        width: 1200px;
+        height: 100px;
+        background-color: black;
+`
 
 function Restaurant ({attributes}) {
 const [restaurant, setRestaurant] =  useState({})
@@ -14,12 +37,15 @@ useEffect(()=>{
     return (
         <div className='wrapper'>
             <div className='column'>
-                <div className='header'>Head goes Here</div>
-                <div className='reviews'>Restaurant Reviews</div>
+                <Header/>
+                <div className='reviews'>
+                    Restaurant Reviews
+                </div>
             </div>
             <div className='column'>
-                <div className='review-form'>Review goes here</div>
+                <Reviewform className='review-form'>Review goes here</Reviewform>
             </div>
+            
         </div>
     )
 }
