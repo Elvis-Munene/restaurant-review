@@ -8,10 +8,10 @@ function ReviewForm(props){
     <form onSubmit={props.handleSubmit}>
         <div>Have an experience with [Restaurant Name]? Share your review</div>
         <div className="field">
-            <input onChange={props.handleChange} type="text" name="title"placeholder='Review Title'/>
+            <input onChange={props.handleChange} value={ReviewForm.title} type="text" name="title"placeholder='Review Title'/>
             </div>
             <div className="field">
-                <input onChange={props.handleChange} type="text" name="description" placeholder='Review Description'/>
+                <input onChange={props.handleChange} value={ReviewForm.description} type="text" name="description" placeholder='Review Description'/>
                 </div>
                 <div className="field">
                     <div className='rating-container'>

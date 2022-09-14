@@ -14,23 +14,10 @@ const Column = styled.div`
         background: white;
         height: 100vh;
         overflow: scroll;
+        &:last-child{
+            background: blue;
+        }
 `
-
-
-const Reviewform = styled.div`
-        text-align: center;
-        width: 600px;
-        height: 600px;
-        background-color: blue;
-`
-
-
-
-
-
-
-
-
 
 function Restaurant ({attributes}) {
 const [restaurant, setRestaurant] =  useState({})
@@ -42,6 +29,7 @@ useEffect(()=>{
     .then((response)=> response.json())
     .then((response)=> setRestaurant(response))  
 },[])
+console.log(restaurant)
 
 function handleChange(e){
 e.preventDefault()
@@ -52,22 +40,45 @@ console.log("review:", review)
 }
 function handleSubmit(e){
     e.preventDefault()
-}
+    const data = {
+        review: review,
+    }
+    fetch("http://localhost:9292/reviews",{
+        method: "POST",
+        headers: {'content-Type': 'application/json'},
+        body: JSON.stringify(review),
+    })
+console.log(review)
+};
+
+
 
 
     return (
         <Wrapper className='wrapper'>
-            <Column className='column'>
-                <Header/>
-                <div className='reviews'>
+            {/* <Column className='column'>
+            {restaurant.map(item => {
+            return(
+            <Header
+            key={item.id}
+            attributes={item}
+            />
+            )}
+            )}
+            </Column> */}
+            <div className='reviews'>
                     Restaurant Reviews
-                </div>
-            </Column>
+            </div>
+          
             <Column>
-                <ReviewForm
-                handleChange={handleChange}
-                handleSubmit={handleSubmit}
-                />
+            
+               <ReviewForm 
+               handleChange={handleChange} 
+               handleSubmit={handleSubmit}
+               attributes={attributes}
+               review={review}
+               />
+        
             </Column>
             
         </Wrapper>
