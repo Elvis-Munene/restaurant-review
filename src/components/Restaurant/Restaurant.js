@@ -48,7 +48,6 @@ function handleSubmit(e){
         headers: {'content-Type': 'application/json'},
         body: JSON.stringify(review),
     })
-console.log(review)
 };
 
 
@@ -56,22 +55,13 @@ console.log(review)
 
     return (
         <Wrapper className='wrapper'>
-            {/* <Column className='column'>
-            {restaurant.map(item => {
-            return(
-            <Header
-            key={item.id}
-            attributes={item}
-            />
-            )}
-            )}
-            </Column> */}
+         <Column className='column'>
+            <Header/>
             <div className='reviews'>
                     Restaurant Reviews
             </div>
-          
-            <Column>
-            
+          </Column>
+          <Column>
                <ReviewForm 
                handleChange={handleChange} 
                handleSubmit={handleSubmit}

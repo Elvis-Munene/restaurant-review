@@ -15,7 +15,7 @@ function ReviewForm(props){
                 </div>
                 <div className="field">
                     <div className='rating-container'>
-                        <div className="rating-title-text">Rate This Airticle</div>[Star Rating Goes here]
+                        <div className="rating-title-text">Rate This Restaurant</div>[Star Rating Goes here]
                     </div> 
             </div>
             <button type="submit">Submit Your Review</button>
