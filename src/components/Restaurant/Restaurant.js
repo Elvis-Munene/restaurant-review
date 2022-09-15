@@ -25,7 +25,7 @@ const [review, setReview] = useState({})
 
 useEffect(()=>{
     // const slug = attributes.match.params.slug
-    fetch(`http://localhost:9292/restaurants`)
+    fetch(`https://restaurantreviewdatabase.herokuapp.com/restaurants`)
     .then((response)=> response.json())
     .then((response)=> setRestaurant(response))  
 },[])
@@ -43,7 +43,7 @@ function handleSubmit(e){
     const data = {
         review: review,
     }
-    fetch("http://localhost:9292/reviews",{
+    fetch("https://restaurantreviewdatabase.herokuapp.com/reviews",{
         method: "POST",
         headers: {'content-Type': 'application/json'},
         body: JSON.stringify(review),

@@ -32,7 +32,7 @@ function Restaurants(){
     const [restaurants, setRestaurants] = useState([])
 
     useEffect(()=>{
-        fetch("http://localhost:9292/restaurants")
+        fetch("https://restaurantreviewdatabase.herokuapp.com/restaurants")
         .then((response)=> response.json())
         .then((response)=> setRestaurants(response))  
     },[])
